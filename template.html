@@ -28,12 +28,12 @@ URL: https://code.google.com/p/io-2012-slides
 
   <slide class="logoslide nobackground">
     <article class="flexbox vcenter">
-      <span><img src="images/google_developers_logo.png"></span>
+      <span><img src="images/bucharest-rb.png"></span>
     </article>
   </slide>
 
   <slide class="title-slide segue nobackground">
-    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <aside class="gdbar"><img src="images/bucharest-rb_128.png"></aside>
     <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
     <hgroup class="auto-fadein">
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
@@ -44,60 +44,64 @@ URL: https://code.google.com/p/io-2012-slides
 
   <slide>
     <hgroup>
-      <h2>Slide with Bullets</h2>
+      <h2>What are Rails Engines ?</h2>
     </hgroup>
     <article>
-      <ul>
-        <li>Titles are formatted as Open Sans with bold applied and font size is set at 45</li>
-        <li>Title capitalization is title case
-          <ul>
-            <li>Subtitle capitalization is title case</li>
+      <ul class="build">
+        <li>Can be considered miniature applications that provide functionality to their host applications</li>
+        <li>Are using the same structure as normal applications</li>
+        <li>Example of Rails Engines:
+          <ul class="build">
+            <li><a href="https://github.com/plataformatec/devise">Devise</a>: authentication library</li>
+            <li><a href="https://github.com/spree/spree">Spree</a>: E-commerce platform</li>
+            <li><a href="https://github.com/pellegrino/jackpot">Jackpot:</a>: ads payment support for Rails applications</li>
+            <li><a href="https://github.com/refinery/refinerycms">RefineryCMS</a>: a CMS engine</li>
+            <li><a href="https://github.com/sferik/rails_admin">Rails Admin</a>: administration interface</li>
           </ul>
         </li>
-        <li>Subtitle capitalization is title case</li>
-        <li>Titles and subtitles should never have a period at the end</li>
       </ul>
     </article>
   </slide>
 
   <slide>
     <hgroup>
-      <h2>Slide with Bullets that Build</h2>
-      <h3>Subtitle Placeholder</h3>
+      <h2>When to use Rails Engines</h2>
     </hgroup>
     <article>
-      <p>A list where items build:</p>
       <ul class="build">
-        <li>Pressing 'h' highlights code snippets</li>
-        <li>Pressing 'p' toggles speaker notes (if they're on the current slide)</li>
-        <li>Pressing 'f' toggles fullscreen viewing</li>
-        <li>Pressing 'w' toggles widescreen</li>
-        <li>Pressing 'o' toggles overview mode</li>
-        <li>Pressing 'ESC' toggles off these goodies</li>
-      </ul>
-      <p>Another list, but items fade as they build:</p>
-      <ul class="build fade">
-        <li>Hover over me!</li>
-        <li>Hover over me!</li>
-        <li>Hover over me!</li>
+        <li>Create a backoffice interface</li>
+        <li>Create modules that can be reused in other applications in the future</li>
+        <li>Divide a monolithic application in a lot of small modules, each one doing a specific thing</li>
+        <li>Create open source application that can be embedded in an existing rails app an then customized (ex: Devise)</li>
+        <li>API Server</li>
       </ul>
     </article>
   </slide>
 
   <slide>
     <hgroup>
-      <h2>Slide with (Smaller Font)</h2>
+      <h2>Practical example:</h2>
     </hgroup>
-    <article class="smaller">
+    <article>
       <ul>
-        <li>All <a href="http://google.com">links</a> open in new tabs.</li>
-        <li>To change that this, add <code>target="_self"</code> to the link.</li>
+        <li>Let's say we have an existing music library application and we want to implement a REST API on top of it</li>
+        <li>We can create the API inside the big application, but as time passes we will end with a bigger and less</li>
+        <li>So, we choose the Rails Engine approach.</li>
       </ul>
     </article>
   </slide>
 
-  <slide hidden>
-    Hidden slides are left out of the presentation.
+  <slide>
+    <hgroup>
+      <h2>Getting Started:</h2>
+    </hgroup>
+
+    <article>
+      <pre class="prettyprint" data-lang="bash">
+        # Create new plugin
+        $ rails plugin new engines/circle_api --mountable
+      </pre>
+    </article>
   </slide>
 
   <slide>
